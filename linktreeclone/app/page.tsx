@@ -10,7 +10,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row gap-2">
           <input className="bg-white text-black rounded-lg p-2 py-4" type="text" placeholder="linktr.ee/" />
-          <button className="bg-[#e9c0e9] p-2 py-4 rounded-full font-semibold text-black">Claim your linktree</button>
+          <button className="bg-[#e9c0e9] p-3 py-4 rounded-full font-semibold text-black">Claim your linktree</button>
         </div>
       </div>
       <div className=" mr-10 flex items-center justify-center">
