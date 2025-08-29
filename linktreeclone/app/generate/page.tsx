@@ -4,29 +4,42 @@ import Image from 'next/image'
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 const generate: React.FC = () => {
-    const notify = () => toast('Wow so easy !');
+    // const notify = () => toast('Wow so easy !');
     const [link,setlink] = useState<string>("")
     const [linkText,setlinkText] = useState<string>("")
+    const [linkBox,setlinkBox] = useState<{link:string , linkText:string}[]>([{link:"",linkText:""}])
     const [linkImage,setlinkImage] = useState<string>("")
     const [handle,setHandle] = useState<string>("")
 
-    const handleAdd = async () => {
+    const handleChange = async () => {
     const res = await fetch("/api/add", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            link,
-            linkText,
+            linkBox,
             linkImage,
             handle
         })
         
     })
     const result = await res.json()
-    toast(result.message)
+    if(result.error) return  toast.error(result.message)
+    else return toast.success(result.message)
+    setlinkBox([{link:"",linkText:""}])
+    
     }
+    const handleAdd = () => { 
+    setlinkBox([...linkBox,{link:"",linkText:""}])
+    }
+    const handleBox = (index:number,value:string,field: "link" | "linkText") => {
+       const updatedBox = [...linkBox]
+      updatedBox[index] = {...updatedBox[index],[field]:value}
+      setlinkBox(updatedBox)
+    }
+
+
     return (
         <div className='bg-[#e9c0e9] min-h-[100vh] grid grid-cols-2'>
             <section className="ml-10  py-40 flex flex-col gap-4 justify-center items-center">
@@ -39,16 +52,28 @@ const generate: React.FC = () => {
                     </div>
                     <div className='flex flex-col gap-2 text-black'>
                         <h1 className='font-semibold'>Step 2: Add Links</h1>
-                        <input value={linkText} onChange={(e) => setlinkText(e.target.value)} type="text" placeholder='Enter Link Text' className='bg-white focus:outline-[#e9c0e9] p-2  rounded-lg text-black' />
-                        <input value={link} onChange={(e) => setlink(e.target.value)} type="text" placeholder='Enter Link' className='bg-white focus:outline-[#e9c0e9] p-2  rounded-lg text-black' />
+                        {linkBox.map((box, index) => (
+                            <div key={index} className="flex gap-2 mb-2">
+                                <input
+                                 value={box.link} 
+                                 onChange={(e) => handleBox(index,e.target.value,"link")} 
+                                 type="text" placeholder='Enter Link' 
+                                 className='bg-white focus:outline-[#e9c0e9] p-2  rounded-lg text-black' />
+                                <input
+                                 value={box.linkText} 
+                                 onChange={(e) => handleBox(index,e.target.value,"linkText")} 
+                                 type="text" placeholder='Enter Link Text' 
+                                 className='bg-white focus:outline-[#e9c0e9] p-2  rounded-lg text-black' />
+                            </div>
+                        ))}
 
-                        <button className='bg-gray-300 w-1/3  text-black p-2 rounded-full font-semibold'>Add Link</button>
+                        <button onClick={() => handleAdd()} className='bg-gray-300 hover:bg-black hover:text-white w-1/3  text-black p-2 rounded-full font-semibold'>Add Link</button>
 
                     </div>
                     <div className='flex flex-col gap-2 text-black'>
                         <h1 className='font-semibold'>Step 3: Add pictures and Finalize</h1>
                         <input value={linkImage} onChange={(e) => setlinkImage(e.target.value)} type="text" placeholder='Enter Image Address' className='bg-white focus:outline-[#e9c0e9] p-2  rounded-lg text-black' />
-                        <button className='bg-black text-white p-2 rounded-full font-semibold'>Create</button>
+                        <button onClick={() => handleChange()} className='bg-black hover:bg-gray-300 hover:text-black text-white p-2 rounded-full font-semibold'>Create</button>
                     </div>
 
                 </div>
