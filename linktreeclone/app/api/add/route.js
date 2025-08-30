@@ -19,3 +19,6 @@ export async function POST(request) {
     
   return Response.json({success:true,error:false, message: 'Your LinkTree has been generated!!!', result:result })
 }
+export async function GET(request) {
+
+    }
