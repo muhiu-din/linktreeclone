@@ -15,6 +15,7 @@ const Login = () => {
        <h1 className='font-bold text-2xl container mx-auto text-center pb-4'>Login to continue</h1>
   {/* Google */}
   <button
+    onClick={() => signIn("google")}
     className="flex items-center w-59 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
     <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 0 48 48">
       <g fill="none">
@@ -27,7 +28,7 @@ const Login = () => {
     <span>Continue with Google</span>
   </button>
 
-  {/* LinkedIn */}
+  {/* LinkedIn
   <button
     className="flex items-center w-59 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
     <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 44 44">
@@ -37,22 +38,22 @@ const Login = () => {
   </button>
 
   {/* Twitter */}
-  <button
+  {/* <button
     className="flex items-center w-59 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
     <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -4 48 48">
       <path fill="#00AAEC" d="M48,9.4c-1.8,0.8-3.6,1.3-5.5,1.5c2-1.2,3.6-3.1,4.3-5.3c-1.9,1.1-4,1.9-6.3,2.3c-1.8-2-4.3-3.2-7-3.2c-5.3,0-9.5,4.7-8.3,10C16,14.1,8.5,10.7,3.7,5.2C2,8.1,2.9,11.8,5.7,13.6c-1.6,0-3.1-0.5-4.3-1.3c0,3.9,2.7,7.2,6.3,8c-1.2,0.3-2.6,0.4-3.9,0.1c1.1,3.5,4.3,6,8.1,6c-3.1,2.4-7,3.9-11.3,3.9c-0.7,0-1.4,0-2.1-0.1c4.1,2.6,9,4.1,14.2,4.1c17.1,0,26.7-14.5,26.7-27c0-0.4,0-0.8,0-1.2C45,13.1,46.7,11.3,48,9.4Z" />
     </svg>
     <span>Continue with Twitter</span>
-  </button>
+  </button> */}
 
   {/* Facebook */}
-  <button
+  {/* <button onClick={() => signIn("facebook")}
     className="flex items-center w-59 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
     <svg className="h-6 w-6 mr-2" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
       <path fill="#4460A0" d="M26.7,24H23v20h-6V24h-4v-5.7h4v-3.5c0-5.6,3.3-8.8,8.4-8.8c2.4,0,4.8,0.4,4.8,0.4v5.2h-2.7c-2.6,0-3.3,1.6-3.3,3.2v3.5h5.6L34,24h-4.7z" />
     </svg>
     <span>Continue with Facebook</span>
-  </button>
+  </button> */}
 
   {/* GitHub */}
   <button onClick={() => signIn("github")}
@@ -64,13 +65,13 @@ const Login = () => {
   </button>
 
   {/* Apple */}
-  <button
+  {/* <button
     className="flex items-center w-59 bg-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
     <svg className="h-6 w-6 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path fill="#000" d="M16.365 1.43c0 1.14-.417 2.097-1.25 2.876-.835.78-1.758 1.21-2.77 1.21-.053-.974.308-1.867 1.08-2.67.773-.804 1.724-1.245 2.852-1.316.033.3.05.59.05.9zm3.37 17.477c-.414.957-.965 1.79-1.656 2.5-.84.86-1.74 1.29-2.697 1.29-.666 0-1.47-.194-2.41-.58-.94-.387-1.565-.58-1.875-.58-.36 0-.9.194-1.63.58-.73.387-1.36.58-1.89.58-.91 0-1.82-.43-2.74-1.29-.69-.71-1.24-1.543-1.66-2.5-.5-1.16-.75-2.303-.75-3.43 0-1.317.33-2.46.98-3.43.653-.97 1.506-1.46 2.56-1.46.506 0 1.183.194 2.03.58.85.387 1.4.58 1.66.58.2 0 .81-.213 1.83-.64.98-.387 1.81-.55 2.49-.49 1.84.147 3.24.996 4.2 2.55-.83.54-1.54 1.307-2.13 2.3-.59.99-.886 2.037-.886 3.14 0 1.127.252 2.27.76 3.43z" />
     </svg>
     <span>Continue with Apple</span>
-  </button>
+  </button> */}
 
 </div>
 
