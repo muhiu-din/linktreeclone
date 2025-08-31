@@ -97,4 +97,4 @@ const Generate: React.FC = () => {
     )
 }
 
-export default generate
+export default Generate

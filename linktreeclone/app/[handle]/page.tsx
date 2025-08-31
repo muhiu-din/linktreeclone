@@ -2,7 +2,7 @@
 import clientPromise from "@/lib/mongodb";
 import Link from "next/link";
 
-export default async function Page({params,}: {params: Promise<{ handle: string }>}) {
+export default async function Page({ params }: { params: { handle: string } }) {
   const { handle } = await params
  const client = await clientPromise
     const db = client.db("linktree")
@@ -20,7 +20,7 @@ return <div className=" flex flex-col items-center min-h-screen bg-green-100">
     <div>
         {item && item.linkBox.map((linkBoxItem:any,index:any) => (
                 <Link  className="text-black font-semibold" href={linkBoxItem.link} target="_blank" rel="noopener noreferrer">
-            <div className="bg-white text-center text-lg hover:bg-gray-200 p-4 px-16 rounded-lg shadow-md mb-4" key={index}>
+            <div key={index} className="bg-white text-center text-lg hover:bg-gray-200 p-4 px-16 rounded-lg shadow-md mb-4" key={index}>
                     {linkBoxItem.linkText}
             </div>
                 </Link>
