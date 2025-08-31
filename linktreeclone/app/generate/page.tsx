@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-const generate: React.FC = () => {
+const Generate: React.FC = () => {
     // const notify = () => toast('Wow so easy !');
     const searchParams = useSearchParams();
     const [link,setlink] = useState<string>("")
