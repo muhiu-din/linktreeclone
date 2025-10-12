@@ -83,7 +83,7 @@ const Generate: React.FC = () => {
                     </div>
                     <div className='flex flex-col gap-2 text-black'>
                         <h1 className='font-semibold'>Step 3: Add pictures and Finalize</h1>
-                        <input value={linkImage} onChange={(e) => setlinkImage(e.target.value)} type="text" placeholder='Enter Image Address' className='bg-white focus:outline-[#e9c0e9] p-2  rounded-lg text-black' />
+                        <input value={linkImage} onChange={(e) => setlinkImage(e.target.value)} type="text" placeholder='Enter Image Address' className='bg-white focus:outline-[#e9c0e9] p-2 rounded-lg text-black' />
                         <input value={desc} onChange={(e) => setdesc(e.target.value)} type="text" placeholder='Enter Description' className='bg-white focus:outline-[#e9c0e9] p-2  rounded-lg text-black' />
                         <button onClick={() => handleChange()} className='bg-black hover:bg-gray-300 hover:text-black text-white p-2 rounded-full font-semibold'>Create</button>
                     </div>
